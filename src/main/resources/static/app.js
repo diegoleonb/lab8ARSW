@@ -1,5 +1,7 @@
 var app = (function () {
 
+    var dibujo =0;
+
     class Point{
         constructor(x,y){
             this.x=x;
@@ -28,7 +30,7 @@ var app = (function () {
     };
 
     var publicPointAtTopic = function (point){
-        stompClient.send("/topic/newpoint", {}, JSON.stringify(point));
+        stompClient.send(dibujo, {}, JSON.stringify(point));
         console.log("Se publico el punto "+point);
     };
 
@@ -41,7 +43,7 @@ var app = (function () {
         //subscribe to /topic/TOPICXX when connections succeed
         stompClient.connect({}, function (frame) {
             console.log('Connected: ' + frame);
-            stompClient.subscribe('/topic/newpoint', function (eventbody) {
+            stompClient.subscribe(dibujo, function (eventbody) {
                 alert(eventbody)
                 var point=JSON.parse(eventbody.body);
                 //console.log(point.x)
@@ -55,11 +57,13 @@ var app = (function () {
 
     return {
 
-        init: function () {
+        connect: function (dibujoCanvas) {
             var can = document.getElementById("canvas");
 
             //websocket connection
+            dibujo="/topic/newpoint." + dibujoCanvas;
             connectAndSubscribe();
+            alert("Se conecto al dibujo "+dibujoCanvas);
             if(window.PointerEvent) {
                 can.addEventListener("pointerdown", function (evt) {
                     var mousePos = getMousePosition(evt);

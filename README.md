@@ -102,6 +102,19 @@ Ajuste la aplicación anterior para que pueda manejar más de un dibujo a la vez
 	git commit -m "PARTE 3".
 	```
 
+Pruebas del funcionamiento:
+
+- Creamos el primer dibujo con el identificador 1:
+
+![](img/Captura7.PNG)
+
+- Creamos el segundo dibujo con el identificador 2 y lo abrimos en otro navegador con el mismo identificador:
+
+![](img/Captura8.PNG)
+
+Aca se puede observar que se dibuja en ambos navegadores.
+
+![](img/Captura9.PNG)
 
 ## Parte IV.
 

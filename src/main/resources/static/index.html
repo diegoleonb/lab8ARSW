@@ -29,7 +29,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
     
-    <body onload="app.init()">
+    <body>
+        <div>
+            Coneccion con el dibujo:<input id="dibujoId" type="number"/>
+            <button onclick="app.connect($('#dibujoId').val())">Conectar</button>
+        </div>>
         X:<input id="x" type="number"/>
         Y:<input id="y" type="number"/>        
         <button onclick="app.publishPoint($('#x').val(),$('#y').val())">Send point</button>
