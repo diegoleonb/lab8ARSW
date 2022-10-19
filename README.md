@@ -146,6 +146,8 @@ Para ver cómo manejar esto desde el manejador de eventos STOMP del servidor, re
 
 	```
 
+	![](img/Captura10.PNG)
+
 2. Ajuste su cliente para que, en lugar de publicar los puntos en el tópico /topic/newpoint.{numdibujo}, lo haga en /app/newpoint.{numdibujo}. Ejecute de nuevo la aplicación y rectifique que funcione igual, pero ahora mostrando en el servidor los detalles de los puntos recibidos.
 
 3. Una vez rectificado el funcionamiento, se quiere aprovechar este 'interceptor' de eventos para cambiar ligeramente la funcionalidad:
@@ -165,7 +167,13 @@ Para ver cómo manejar esto desde el manejador de eventos STOMP del servidor, re
 	git commit -m "PARTE FINAL".
 	```	
 
+Pruebas de funcionamiento:
 
+![](img/Captura11.PNG)
+
+Poligono:
+
+![](img/Captura12.PNG)
 
 ### Criterios de evaluación
 
