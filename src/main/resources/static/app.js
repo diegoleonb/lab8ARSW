@@ -44,7 +44,8 @@ var app = (function () {
             stompClient.subscribe('/topic/newpoint', function (eventbody) {
                 alert(eventbody)
                 var point=JSON.parse(eventbody.body);
-                console.log(point.x)
+                //console.log(point.x)
+                addPointToCanvas(point);
             });
         });
 
@@ -59,6 +60,15 @@ var app = (function () {
 
             //websocket connection
             connectAndSubscribe();
+            if(window.PointerEvent) {
+                can.addEventListener("pointerdown", function (evt) {
+                    var mousePos = getMousePosition(evt);
+                    var point = new Point(mousePos.x, mousePos.y);
+                    console.log(point);
+                    addPointToCanvas(point);
+                    publicPointAtTopic(point);
+                });
+            }
         },
 
         publishPoint: function(px,py){

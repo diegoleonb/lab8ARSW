@@ -80,6 +80,15 @@ Para hacer mas útil la aplicación, en lugar de capturar las coordenadas con ca
 	git commit -m "PARTE 2".
 	```
 
+Pruebas del funcionamiento(Se selecciona un punto de la pantalla y se dibuja en el canvas. Se puede observar que se dibuja en todos los navegadores):
+
+![](img/Captura4.PNG)
+
+![](img/Captura5.PNG)
+
+![](img/Captura6.PNG)
+
+
 ## Parte III.
 
 Ajuste la aplicación anterior para que pueda manejar más de un dibujo a la vez, manteniendo tópicos independientes. Para esto:
